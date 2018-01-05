@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1"
+    android:id="@+id/LinearLayoutVertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/><![CDATA[
+        //app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    ]]>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Background Colour:"
+            android:id="@+id/backgroundColour"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/radioColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="White"
+                android:id="@+id/white"
+                android:checked="true"
+                android:onClick="onClickBackgroundColourWhite"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue"
+                android:id="@+id/blue"
+                android:checked="false"
+                android:onClick="onClickBackgroundColourBlue"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Brightness"
+            android:id="@+id/brightness"
+            android:progress="0"
+            android:max="100"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp" />
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_weight="0.31"
+            android:indeterminate="false"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPercentage"
+            android:layout_alignTop="@+id/BrightBar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/SoundPercentage"
+            android:layout_alignStart="@+id/SoundPercentage" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="53dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Difficulty:"
+            android:id="@+id/textView"
+            android:textSize="20dp" />
+
+        <Spinner
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/difficulty"
+            android:spinnerMode="dropdown"
+            android:entries="@array/difficulty_arrays"
+            android:prompt="@string/difficulty_prompt"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="89dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/playGameButton"
+            android:onClick="onClickLevel1_Activity"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_weight="0.69"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="177dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/icon"
+            android:scaleType="matrix"
+            android:layout_alignRight="@+id/textview"
+            android:layout_alignEnd="@+id/textview"
+            android:layout_weight="0.73" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pinch to change size"
+            android:id="@+id/gesture"
+            android:textSize="20dp"
+            android:layout_weight="0.16"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</LinearLayout>
